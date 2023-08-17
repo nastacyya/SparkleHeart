@@ -12,7 +12,20 @@ body {
     margin: 0;
     font-size: 18px;
 }
-
+.fixed-anchor {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FFA800;
+    color: white;
+	opacity: 0.7;
+    border-radius: 50%;
+    cursor: pointer;
+	z-index: 3;
+	font-size: 50px;
+	margin: 0;
+	padding: 8px 25px;
+}
 .paper-decor {
 	position: absolute;
 	width: 100%;
