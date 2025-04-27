@@ -12,37 +12,44 @@
     </head>
     <body>
         <header>
-            <img class="header-logo" src="assets/img/BlackLogo 3.jpg" alt="logo">
-                <nav>
-                    <a class="nav-link">Ideja</a>
-                    <a class="nav-link">Piesaki Sapni</a>
-                    <a class="nav-link">Uzņēmējiem</a>
-                    <a class="nav-link">Sapņu banka</a>
-                    <a class="nav-link">Sapņus atbalsta</a>
-                    <a class="nav-link">99 Iedvesmas stāsti</a>
-                    <a class="language">LV</a>
-                </nav>
-                <img class="nav-x" src="assets/img/Vector-3.svg">
+            <img class="header-logo" src="assets/img/BlackLogo 3.jpg" alt="SparkleHeart logo">
+            <nav>
+                <a class="nav-link">Ideja</a>
+                <a class="nav-link">Piesaki Sapni</a>
+                <a class="nav-link">Uzņēmējiem</a>
+                <a class="nav-link">Sapņu banka</a>
+                <a class="nav-link">Sapņus atbalsta</a>
+                <a class="nav-link">99 Iedvesmas stāsti</a>
+                <a class="nav-link">LV</a>
+            </nav>
+            <img class="nav-x" src="assets/img/Vector-3.svg">
         </header>
+        
         <img class="paper-decor" src="assets/img/Union.png">
-        <div class="intro">
-            <img class="play-button" src="assets/img/Group 2.svg">
-            <img class="video" src="assets/img/Sparkle_Video.png">
+        <div class="intro" onclick="playPause()">
+            <img class="play-button" id="play-button" src="assets/img/Group 2.svg">
+            <video class="video-placeholder" id="video">
+                <source src="assets/img/Sparkle_Video.mp4" type="video/mp4">
+            </video>
         </div>
     
         <div class="center-text">
             <p>SparkleHeart ir biedrība, kas radīta, lai palīdzētu cilvēkiem piepildīt pat pārdrošākos sapņus. Šeit satiekas sapņotāji un viņu atbalstītāji - uzņēmumi, kas sniedz palīdzīgu roku, lai kopā pasauli padarītu par labāku vietu mums visiem.Mēs esam gatavi palīdzēt Tev piepildīt sapni. Kā pamats iedvesmai - tiek radīti arī 99 stāsti par Latvijas sievietēm.</p>
         </div>
-        <img class="paper-decor" src="assets/img/ripped 6 7.png">
-        <div class="photos-col">
+        <img class="paper-decor-1" src="assets/img/ripped 6 7.png">
+        <div class="photos-div">
             <div class="photos-row">
-                <img class="photo" id="photo1" src="assets/img/Zanda_1.jpg">
-                <img class="photo" id="photo2" src="assets/img/Sibilla_4.jpg">
-                <div class="photos-inner" id="photo3">
-                    <img src="assets/img/Brinuma_meita-15.jpg">
-                    <img src="assets/img/Alina_1 1.jpg">
+                <div class="bottom-photos">
+                    <img class="photo" id="photo1" src="assets/img/Zanda_1.jpg">
+                    <img class="photo" id="photo2" src="assets/img/Sibilla_4.jpg">
                 </div>
-                <img class="photo" id="photo4" src="assets/img/Anda_2 1.jpg">
+                <div class="top-photos">
+                    <div class="photos-inner">
+                        <img id="photo3" src="assets/img/Brinuma_meita-15.jpg">
+                        <img id="photo3" src="assets/img/Alina_1 1.jpg">
+                    </div>
+                    <img class="photo" id="photo4" src="assets/img/Anda_2 1.jpg">
+                </div>    
             </div>
         </div>
         <img class="paper-decor-2" src="assets/img/ripped 6 8.png">
@@ -85,14 +92,20 @@
         <div class="supporters-div">
 			<p class="supporters-text">Atbalstītāji</p>
 			<div class="supporters-logos">
-				<img class="logo1" src="assets/img/getlogo 1.png">
-				<img class="logo1" src="assets/img/sem_logo-2 1.png">
-				<img class="logo1" src="assets/img/Citybee-logo 1.png">
-				<img class="logo2" src="assets/img/logo1 1.png">
+                <div class="logos-row-1">
+                    <img class="logo1" src="assets/img/getlogo 1.png">
+                    <img class="logo1" src="assets/img/sem_logo-2 1.png">
+                </div>
+                <div class="logos-row-2">
+                    <img class="logo1" src="assets/img/Citybee-logo 1.png">
+                    <img class="logo2" src="assets/img/logo1 1.png">
+                </div>
 			</div>
 		</div>
         <img class="paper-decor" src="assets/img/ripped_orange.png">
-	<div class="fixed-anchor" id="fixedAnchor">↑</div>
+        <div class="fixed-anchor" id="fixedAnchor">
+            <span>↑</span>
+        </div>
         <footer class="bottom-info">
             <div class="bottom-info-rows">
                 <div class="info1">
@@ -128,6 +141,6 @@
                 </div>
             </div>    
         </footer>
-	<script type="text/javascript" src="assets/js./theme.js"></script>
+        <script type="text/javascript" src="assets/js./theme.js"></script>
     </body>
 </html>

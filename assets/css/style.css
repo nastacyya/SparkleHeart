@@ -13,21 +13,21 @@ body {
     font-size: 18px;
 }
 
-.fixed-anchor {
+.fixed-anchor {		/* Arrow to the top */
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #FFA800;
+    background-color: var(--bg-color);
     color: white;
 	opacity: 0.7;
     border-radius: 50%;
     cursor: pointer;
 	z-index: 3;
 	font-size: 50px;
-	margin: 0;
-	padding: 8px 25px;
+	text-align: center;
+	width: 60px;
+	height: 60px;
 }
-
 
 .paper-decor {
 	position: absolute;
@@ -40,41 +40,30 @@ body {
 header {
 	display: flex;
 	flex-direction: row;
-	position: relative;
-	justify-content: space-between;
-	z-index: 1;
     background-color: white;
 	align-items: center;
-    margin: 0 auto;
+	justify-content: center;
 }
 
 header a {
-    display: inline-block;
-    vertical-align: top;
-    margin: 0 17px;
-    padding-top: 51px;
+    margin-left: 40px;
     position: relative;
     text-decoration: none;
     color: #060606;
     font-weight: 500;
 }
+
+.header-logo{
+	margin-right: 60px;
+}
 nav {
-	margin-right: 62px;
+	display: flex;
+	flex-direction: row;
+	padding-top: 50px;
 }
 .nav-link:hover {
-    font-weight: bold;
 	cursor: pointer;
-    text-decoration: none;
     border-bottom: 3px solid var(--bg-color);
-    padding-bottom: 3px;
-}
-
-.language:hover {
-	font-weight: bold;
-	cursor: pointer;
-}
-.header-logo{
-	margin-left: 62px;;
 }
 
 @media only screen and (max-width: 1299px){
@@ -111,25 +100,27 @@ nav {
 	position: relative;
 	max-width: 100%;
 }
-.video {
-	z-index: -1;
+
+.video-placeholder {
 	width: 100%;
-	max-width: 100%;
-	height: auto;
+	z-index: -1;
 }
 
 .play-button {
 	position: absolute;
 	z-index: 2;
-	filter: drop-shadow(0px 4px 20px #00000040);
-	max-width: 100%;
-	top: 40%;
-	left: 45%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
+	transition: all .2s ease-in-out;
 }
 
 .play-button:hover {
 	cursor: pointer;
+	transform: translate(-50%, -50%) scale(1.1,1.1);
 }
+
 .center-text {
 	width: 100%;
 	align-items: center;
@@ -138,7 +129,6 @@ nav {
 .center-text p{
     color: #2F4858;
     text-align: center;
-    font-family: 'Montserrat';
     font-size: 18px;
     font-weight: 400;
 	padding: 150px 0;
@@ -152,35 +142,47 @@ nav {
 	flex-direction:row;
 	width:100%;
 }
-.photos-col {
-	display:flex;
-	flex-direction:column;
-	width:100%;
+
+.bottom-photos, .top-photos {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	max-width: 100%;
 }
 
 .photos-inner {
 	display:flex;
 	flex-direction:column;
-	padding-top: 1%;
+	
+}
 
+#photo1{
+	width: 50%;
 }
-#photo1 {
-	width:25%;
-}
-#photo2{
-	width: 25%;
+#photo2 {
+	width: 50%;
 }
 #photo3{
-	width: 22%;
+	width: 100%;
+	height: 100%;
 }
 #photo4{
-	width: 28%;
+	width: 60%;
 }
 
 .paper-decor-2 {
     position: absolute;
 	width: 100%;
     margin-top: -3%;
+}
+
+.paper-decor-1{
+	position: absolute;
+	width: 100%;
+    margin-top: -10px;
+	z-index: 1;
 }
 
 /* Buttons */
@@ -205,10 +207,7 @@ nav {
 }
 
 .btn-inner {
-	font-family: 'Montserrat';
-	font-style: normal;
 	font-weight: 500;
-	font-size: 18px;
 	line-height: 50px;
 	text-align: center;
 	margin: auto;
@@ -218,11 +217,13 @@ nav {
 	background-color: var(--bg-color);
 	border-radius: 25px;
 	color: #fff;
+	transition: all .5s ease-in-out;
 }
 
 .btn-inner:hover {
 	background-color: #FFDA16;
 	cursor: pointer;
+	transform: scale(1.1);
 }
 
 .btn-inner:active {
@@ -295,7 +296,7 @@ textarea {
 
 .comment {
 	color: #2F4858;
-	font-family: Montserrat;
+	font-family: 'Montserrat';
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 400;
@@ -348,11 +349,13 @@ textarea {
 	background-color: var(--bg-color);
 	border-radius: 35px;
 	margin-bottom: 150px;
+	transition: all .5s ease-in-out;
 }
 
 .submit-btn:hover {
 	background-color: #FFDA16;
 	cursor: pointer;
+	transform: scale(1.1);
 }
 
 .submit-btn:active {
@@ -362,9 +365,7 @@ textarea {
 .submit {
 	color: #FFF;
 	text-align: center;
-	font-family: 'Montserrat';
 	font-size: 24px;
-	font-style: normal;
 	font-weight: 500;
 	line-height: normal;
 }
@@ -375,6 +376,7 @@ textarea {
 	z-index: 3;
     margin-top: 0;
 }
+
 /* Supporters */
 .supporters-div {
 	background-color: #FFCB66;
@@ -418,10 +420,7 @@ footer {
 
 .bottom-info p{
 	color: #FFF;
-	font-family: 'Montserrat';
-	font-style: normal;
 	font-weight: 500;
-	line-height: normal;
 }
 
 .info1 {
@@ -479,6 +478,7 @@ footer {
 	margin: 0;
 	padding-bottom: 10px;
 	font-size: 18px;
+	text-decoration: none;
 }
 
 .info4 p:first-of-type{
@@ -521,10 +521,12 @@ footer {
 	.info2, .info3 {
 		display: none;
 	}
+	.nav-link {
+		font-size: 16px;
+	}
 	.hidden {
 		display: inline;
 		padding-bottom: 35px;
-		font-family: 'Montserrat';
 		line-height: 22px;
 		font-weight: 700 !important;
 	}
@@ -553,24 +555,20 @@ footer {
 	nav, .info1 p, .info2, .info3 {
 		display: none;
 	}
-	.nav-x {
-		display: inline !important;
-		margin: -40px 30px 0 0;
-	}
-	.play-button {
-		top: 35%;
-		left: 35%;
-		width: 30%;
-		height: 30%;
+	.header-logo {
+		margin-right: 0;
 	}
 	.center-text p{
 		width: 280px !important;
 		padding: 80px 0 !important;
-		font-size: 12px;
+		font-size: 16px;
 	}
-	.photos-col {
+	.photos-row {
 		display: flex;
-		flex-direction: column;
+		flex-direction: column-reverse;
+	}
+	.paper-decor-1 {
+		margin-top: -3px;
 	}
 	.buttons {
 		flex-direction: column !important;
@@ -605,32 +603,42 @@ footer {
 	}
 	.supporters-logos {
 		display: flex;
-		flex-wrap: wrap;
+		flex-direction: column;
+		padding: 0 !important;
 	}
 	.supporters-text {
 		padding-bottom: 20px;
 	}
+	.logos-row-1 {
+		justify-content: center !important;
+	}
 	.logo1 {
-		width: 100px;
-		height: 42px;
+		width: 130px;
+		height: 44px;
+	}
+	.logos-row-2 {
+		width: 300px;
+		align-items: center;
+	}
+	.logos-row-2 .logo1 {
+		margin-left: 17px !important;
 	}
 	.logo2 {
-		width: 50px;
-		height: 71px;
+		width: 48px;
+		height: 67px;
+		margin: 31px 0 0 63px !important;
 	}
-	.logo1, .logo2 {
+	.logo1 {
 		margin: 20px 10px 0 20px;
 	}
 	.bottom-info-rows {
 		flex-direction: column !important;
 		padding: 40px 0 0 20px;
-
 	}
 	.golden-logo {
 		align-self: flex-start;
 		padding: 30px 0 25px;
 	}
-	
 	.info4 {
 		padding: 0 0 30px 20px;
 		text-align: left;
@@ -649,7 +657,6 @@ footer {
 	.moved-text {
 		display: inline;
 		color: #FFF;
-		font-family: 'Montserrat';
 		font-size: 11px;
 		font-weight: 500;
 	}
